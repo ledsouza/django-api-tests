@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "django-api-tests"
+version = "0.1.0"
+description = ""
+authors = ["ledsouza <leandro.souza.159@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+asgiref = "^3.8.1"
+django = "^5.0.6"
+django-filter = "^24.2"
+djangorestframework = "^3.15.1"
+pytz = "^2024.1"
+sqlparse = "^0.5.0"
+django-cors-headers = "^4.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
