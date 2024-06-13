@@ -49,3 +49,15 @@ class AuthenticationUserTestCase(APITestCase):
         """
         user = authenticate(username='c3po', password='123455')
         self.assertFalse(user is not None and user.is_authenticated)
+
+    def test_requisicao_get_com_user_autenticado(self):
+        """
+        Verifica se uma requisição GET com um usuário autenticado é bem-sucedida.
+
+        Este teste força a autenticação do cliente com o usuário `self.user` e, em seguida, 
+        realiza uma requisição GET para a URL `self.list_url`. 
+        Espera-se que a resposta tenha o código de status HTTP 200 OK, indicando que a requisição foi bem-sucedida.
+        """
+        self.client.force_authenticate(self.user)
+        response = self.client.get(self.list_url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
